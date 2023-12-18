@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 
 public class Wepon : MonoBehaviour
@@ -13,10 +14,23 @@ public class Wepon : MonoBehaviour
 
     private float nextFire;
 
+    [Header("Ammo")]
+    public int mag = 5;
+    public int ammo = 30;
+    public int magAmmo = 30;
+
     [Header("VFX")]
     public GameObject hitVFX;
 
+    [Header("UI")]
+    public TextMeshProUGUI magText;
+    public TextMeshProUGUI ammoText;
 
+
+    void Start() {
+        magText.text = mag.ToString();
+        ammoText.text = ammo + "/" + magAmmo;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -24,11 +38,31 @@ public class Wepon : MonoBehaviour
             nextFire -= Time.deltaTime;
         }
 
-        if (Input.GetButton("Fire1") && nextFire <=0) {
+        if (Input.GetButton("Fire1") && nextFire <=0 && ammo > 0) {
             nextFire = 1 / fireRate;
+
+            ammo--;
+
+        magText.text = mag.ToString();
+        ammoText.text = ammo + "/" + magAmmo;
 
             Fire();
         }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Reload();
+        }
+    }
+
+    void Reload(){
+        if (mag > 0) {
+            mag--;
+
+            ammo = magAmmo;
+        }
+
+        magText.text = mag.ToString();
+        ammoText.text = ammo + "/" + magAmmo;
     }
 
     void Fire() {
