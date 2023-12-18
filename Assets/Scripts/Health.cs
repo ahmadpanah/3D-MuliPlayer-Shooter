@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
         healthText.text = health.ToString();
 
         if (health <= 0) {
+            RoomManager.instance.RespawnPlayer();
+            
             Destroy(gameObject);
         }
     }
