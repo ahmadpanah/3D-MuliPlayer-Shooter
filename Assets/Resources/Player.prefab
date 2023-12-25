@@ -910,16 +910,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e4f8c8dd679f994b808c327ec540542, type: 3}
---- !u!4 &4685719787451785659 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e4f8c8dd679f994b808c327ec540542, type: 3}
-  m_PrefabInstance: {fileID: 5083926466142946896}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5353889346126969601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e4f8c8dd679f994b808c327ec540542, type: 3}
   m_PrefabInstance: {fileID: 5083926466142946896}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &4685719787451785659 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e4f8c8dd679f994b808c327ec540542, type: 3}
+  m_PrefabInstance: {fileID: 5083926466142946896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &6820617431973592005
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353889346126969601}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 9f1189e1bd93d164eb638e6cf59c0ca2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 9f1189e1bd93d164eb638e6cf59c0ca2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &4720095031166157191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,6 +957,11 @@ MonoBehaviour:
   hitVFX: {fileID: 5477093693288921662, guid: 1d9d55fb141b30e438672eead2b580c3, type: 3}
   magText: {fileID: 5908786978895884719}
   ammoText: {fileID: 6195290715596709262}
+  animation: {fileID: 6820617431973592005}
+  reload: {fileID: 7400000, guid: 9f1189e1bd93d164eb638e6cf59c0ca2, type: 2}
+  recoverPercent: 0.7
+  recoilUp: 0.05
+  recoilBack: 0.05
 --- !u!114 &8286564769278490982
 MonoBehaviour:
   m_ObjectHideFlags: 0
